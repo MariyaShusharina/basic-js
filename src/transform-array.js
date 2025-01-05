@@ -18,8 +18,6 @@ function transform(arr) {
     throw new Error("'arr' parameter must be an instance of the Array!");
   }
   let ret = [];
-  /*console.debug(" ARRAY:");
-  console.debug(arr);*/
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === '--discard-next') {
       i++;
@@ -32,27 +30,6 @@ function transform(arr) {
     } else if (arr[i] !== '--double-prev' && arr[i] !== '--double-next' && arr[i] !== '--discard-prev' && arr[i] !== '--discard-next') {
       ret.push(arr[i]);
     }
-    /*switch(true) {
-      case (arr[i] === '--discard-next'):
-        i++;
-        break;
-      case (arr[i] === '--discard-prev' && i > 0):
-        ret.splice(ret.length - 1);
-        break;
-      case (arr[i] === '--double-next' && (i + 1) < arr.length):
-        ret.push(arr[i+1]);
-        break;
-      case (arr[i] === '--double-prev' && i > 0 && arr[i-2] !== '--discard-next'):
-        ret.push(arr[i-1]);
-        break;
-      case (arr[i] !== '--double-prev' && arr[i] !== '--double-next' && arr[i] !== '--discard-prev' && arr[i] !== '--discard-next'):
-        ret[i] = arr[i];
-        break;
-    }*/
-  }
-  /*console.debug(" OUTPUT ARRAY:");
-  console.debug(ret);
-  console.debug(' ');*/
   return ret;
 }
 
