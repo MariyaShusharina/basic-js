@@ -30,6 +30,7 @@ function transform(arr) {
     } else if (arr[i] !== '--double-prev' && arr[i] !== '--double-next' && arr[i] !== '--discard-prev' && arr[i] !== '--discard-next') {
       ret.push(arr[i]);
     }
+  }
   return ret;
 }
 
